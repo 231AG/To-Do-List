@@ -1,62 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 63%;
+}
 body {
-    background-color: #f7f7f7;
+    background-image: linear-gradient(to right, #f7f7f7, rgba(128, 128, 128, .3));
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.5;
     margin: 0;
+    box-sizing: border-box;
 }
 .container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem;
     background-color: #FFF;
+    border: none;
+    border-top: .5rem solid #4CAF50;
+    border-radius: .4rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+}
+
+.container .title:hover :not(h1:hover) {
+    color: #4CAF50;
 }
 h1 {
-    font-size: 36px;
-    margin: 0 0 20px 0;
+    font-size: 3.6rem;
+    margin: 0 0 2rem 0;
 }
 form {
     display: flex;
-    margin-bottom: 20px;
+    margin: 2.5rem 0 2.0rem 0;
+    position: relative;
+    justify-content: end;
+    
 }
-input[type="text"] {
+
+/* input[type="text"] {
     flex-grow: 1;
-    padding: 10px;
+    padding: 1rem;
     border: none;
-    border-radius: 3px;
-    font-size: 16px;
-    margin-right: 10px;
+    border-radius: .3rem;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+} */
+
+/* || INPUT AND SPAN("add new task") STYLE || */
+input {
+    width: 89%;
+    border: none;
+    border-radius: .3rem;
+    background: transparent;
+
+    position: absolute;
+    top: 3px;
+    left: .9rem;
+    padding: 1rem;
 }
+
+form > span {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    padding: .9rem;
+    font-weight: 100;
+    display: inline-block;
+    transition: all .8s;
+    pointer-events: none;
+}
+
+/* || FUNCTIONALITY FOR "ADD NEW TASK" || */
+input:valid ~ span,
+input:focus ~ span {
+    font-size: 1.4rem;
+    transform: translateX(-10px) translateY(-32px); 
+}
+
+
 button[type="submit"]{
     background-color: #4CAF50;
     color: #FFFFFF;
     border: none;
-    border-radius: 3px;
-    font-size: 16px;
-    padding: 10px;
+    border-radius: .3rem;
+    font-size: 1.6rem;
+    padding: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
 }
-button[type="submit"].hover {
+button[type="submit"]:hover {
     background-color: #3E8E41;
 }
+
+/* || LIST BEGINS HERE || */
 ul {
     list-style: none;
-    padding: 0;
+    padding: 0 .5rem;
+    transition: all .2s;
+    border: .4rem solid;
 }
+
 li {
-    background-color: #FFFFFF;
-    padding: 10px;
+    background-image: linear-gradient(to right,
+                    rgba(35, 191, 40, 0.8), 
+                    rgba(77, 116, 78, .99));
+    font-weight: 300;
+    padding: 1rem;
     border-radius: 3px;
-    margin-bottom: 10px;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1.5rem;
+    transition: all .2s;
+
+    /*  || TRY PLAYING AROUND WITH THESE TWO COMMENT BELOW AND SEE WHICH ONE YOU LIKE || */
+    /* outline: .3rem solid; */
+    /* color: #FFF; */
+
+}
+
+li:last-child {
+    margin-bottom: 1rem;
 }
 li span {
     flex-grow: 1;
-    margin-right: 10px;
+    margin-right: 1rem;
+}
+
+.delete-task {
+    padding: .5rem 1rem;
+    color: black;
+    outline: none;
+    border: none;
+    border: .1rem solid;
 }
   
   

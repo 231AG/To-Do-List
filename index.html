@@ -9,9 +9,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>To-Do List</h1>
+        <div class="title">
+            <h1> <span>&check;</span> To-Do List</h1>
+        </div>
         <form action="">
-            <input type="text" name="" id="new-task" placeholder="Add new task">
+            <input type="text" name="" id="new-task" required>
+            <span>Add new task</span>
             <button type="submit" id="add-task">Add</button>
         </form>
         <ul id="task-list">
